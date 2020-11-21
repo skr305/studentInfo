@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.CoursMapper">
+    <select id="getCours" parameterType="String" resultType="com.example.demo.model.Cours">
+        select * from cours WHERE id=#{id};
+    </select>
+    <insert id="addCours" parameterType="com.example.demo.model.Cours">
+        INSERT INTO cours (cours, id) VALUES (#{cours}, #{id})
+    </insert>
+    <delete id="delCours" parameterType="com.example.demo.model.Cours">
+        DELETE FROM cours WHERE cours=#{cours} AND id=#{id}
+    </delete>
+</mapper>
